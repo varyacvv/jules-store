@@ -1,109 +1,77 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JULES | ДЖУЛС</title>
-    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playpen+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header class="header">
-      <h1 class="header__name">JULES | ДЖУЛС</h1>
-      <p class="header__description">Магазин эксклюзивных ювелирных украшений</p>
-      <!-- Навигация -->
 
-      <nav class="header__nav">
-        <a href="#" class="nav-link">Главная</a>
-        <a href="#" class="nav-link">Каталог</a>
-        <a href="#" class="nav-link">О нас</a>
-        <a href="#" class="nav-link">Контакты</a>
-      </nav>
+    <header class="header">
+        <div class="header__name"><img src="images/jules1.png" alt="JULES"></div>
+        <nav class="header__nav">
+            <a href="#" class="nav__link">О НАС</a>
+            <a href="#" class="nav__link">ДОСТАВКА</a>
+            <a href="#" class="nav__link">КОНТАКТЫ</a>
+        </nav>
     </header>
 
-
-      <!-- Hero  -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1> just JULES JEWELRY</h1>
-                <p>Эксклюзивные коллекции. Ограниченный тираж. Вечная ценность</p>
-                <button class="hero-btn">КУПИТЬ ❤️</button>
-            </div>
+    <section class="hero">
+        <div class="hero__image"></div>
+        <div class="hero__content">
+            <img src="images/jules2.png" alt="ДЖУЛС" class="hero__logo">
+            <p>Эксклюзивные коллекции. Ограниченный тираж. Вечная ценность</p>
+            <button class="hero__btn">КАТАЛОГ</button>
+        </div>
+        <div class="hero__image">
+            <img src="images/girl1.png" alt="Girl">
         </div>
     </section>
 
-    <!-- Коллекции -->
-    <section class="collections" id="collections">
-        <div class="container">
-            <h2>LATEST COLLECTIONS</h2>
-            <div class="collection-grid">
-              
-                <div class="collection-item">
-                    <img src="images/bracelets.jpeg" alt="Bracelet">
-                    <h3>Braceletes</h3>
-                </div>
+    <section class="features">
+        <div class="feature__item"><h3>Качество</h3><p>Используем только золото 585 пробы и стерлинговое серебро</p></div>
+        <div class="feature__item"><h3>Ручная работа</h3><p>Каждое изделие проходит через руки мастера с любовью</p></div>
+        <div class="feature__item"><h3>Гарантия</h3><p>Украшения, которые станут вашей семейной реликвией</p></div>
+    </section>
 
-                <div class="collection-item">
-                    <img src="images/rings.jpeg" alt="Rings">
-                    <h3>Rings</h3>
-                </div>
-
-                <div class="collection-item">
-                    <img src="images/necklaces.jpeg" alt="Necklaces">
-                    <h3>Necklaces</h3>
-                </div>
-
-                <div class="collection-item">
-                    <img src="images/earrings.jpeg" alt="Earrings">
-                    <h3>Earrings</h3>
-                </div>
-
-            </div>
+    <section class="collections">
+        <h2><img src="images/latest-collection.png" alt="Latest collection"></h2>
+        <div class="collection__grid">
+            <div class="collection__item"><img src="images/bracelets.jpeg" alt="Bracelets"><h3>Bracelets</h3></div>
+            <div class="collection__item"><img src="images/rings.jpeg" alt="Rings"><h3>Rings</h3></div>
+            <div class="collection__item"><img src="images/necklaces.jpeg" alt="Necklaces"><h3>Necklaces</h3></div>
+            <div class="collection__item"><img src="images/earrings.jpeg" alt="Earrings"><h3>Earrings</h3></div>
         </div>
     </section>
 
-    <!-- Подписка на новости -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Подпишись на новости!</h2>
-            <h3>Будь в курсе скидок!</h3>
-            <form class="subscribe-form">
-                <input type="email" placeholder="mail@gmail.com" required>
-                <button type="submit">SUBSCRIBE</button>
-            </form>
+    <section class="subscribe">
+        <img class="subscribe__image" src="images/jules-sale.png" alt="Sale">
+        <div class="subscribe__block"><h2>Подпишись на новости!</h2>
+        <h3>Будь в курсе скидок ❤️</h3>
+        <form class="subscribe__form">
+            <input type="email" placeholder="mail@gmail.com" required>
+            <button type="submit">SUBSCRIBE</button>
+        </form>
+        </div>
+        <img class="subscribe__image2" src="images/shopping-cart.png" alt="Shopping cart">
+    </section>
+
+    <section class="app__section">
+        <h2>Скачай наше приложение</h2>
+        <div class="app__buttons">
+            <a href="#" class="app__btn"><img src="images/app-store.png" alt="App Store"></a>
+            <a href="#" class="app__btn"><img src="images/play-store.png" alt="Play Store"></a>
         </div>
     </section>
 
-    <!-- Приложение  -->
-    <section class="app-section">
-        <div class="container">
-            <h2>Скачай наше приложение</h2>
-            <div class="app-buttons">
-                <a href="#" class="app-btn">
-                    <img src="images/app-store.png" alt="App Store">
-                </a>
-                <a href="#" class="app-btn">
-                    <img src="images/play-store.png" alt="Play Store">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Подвал -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">JULES Jewelry</div>
-                <div class="social-media">
-                    <a href="#"><img src="images/vk-logo.png" alt="Vkontakte"></a>
-                    <a href="#"><img src="images/telegram-logo.png" alt="Telegram"></a>
-                    <a href="#"><img src="images/instagram-logo.png" alt="Instagram"></a>
-                </div>
-            </div>
-            <p class="copyright">© 2026 JULES Jewelry. All rights reserved.</p>
+    <div class="footer__content">
+        <div class="footer__logo"><img src="images/jules1.png" alt="JULES"></div>
+        <div class="social__media">
+            <a href="#"><img src="images/vk-logo.png" alt="Vkontakte"></a>
+            <a href="#"><img src="images/telegram-logo.png" alt="Telegram"></a>
+            <a href="#"><img src="images/instagram-logo.png" alt="Instagram"></a>
         </div>
-    </footer>
-    <script src="script.js"></script>
+    </div>
+    <p class="copyright">© 2026 JULES Jewelry. All rights reserved.</p>
+</footer>
+
+
 </body>
 </html>
