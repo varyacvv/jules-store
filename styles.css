@@ -1,4 +1,4 @@
-/* Общие настройки */
+/* /// Общие настройки ///*/
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +27,9 @@ button {
   background-position: center;
   background-color: transparent;
   border: none;
-  cursor: url("images/pointer.png") 6 6, pointer;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer;
   transition: transform 0.3s ease;
 }
 
@@ -36,7 +38,7 @@ button:hover {
   color: #ff1180;
 }
 
-/* Шапка*/
+/* /// ШАПКА ///*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -60,11 +62,14 @@ nav a {
   color: #8b008b;
   font-weight: 700;
   transition: 0.3s;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer;
 }
 nav a:hover {
   color: #ff8fc4;
 }
-/* Hero блок */
+/* /// HERO блок ///*/
 .hero {
   display: flex;
   justify-content: space-between;
@@ -88,7 +93,7 @@ nav a:hover {
 .hero-img {
   width: 300px;
 }
-/* Преимущества */
+/* /// Преимущества ///*/
 .features {
   display: flex;
   justify-content: space-between;
@@ -103,18 +108,16 @@ nav a:hover {
   margin-bottom: 10px;
   color: #8b008b;
 }
-/* Коллекции */
-/* ===== COLLECTIONS ===== */
-
-.collections {
-  padding: 40px 20px;
-}
+/* /// Коллекции ///*/
 
 .collections h2 img {
   width: 50%;
   margin: auto;
+  transition: transform 0.4s ease;
 }
-
+.collections h2 img:hover {
+  transform: scale(1.1);
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -126,7 +129,7 @@ nav a:hover {
   background: white;
   border-radius: 18px;
   padding: 12px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
@@ -168,14 +171,14 @@ nav a:hover {
   border-radius: 14px;
   padding: 8px;
   background: white;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
 .filter-mode .extra-images img:hover {
   transform: scale(1.05);
 }
-/* Фильтр */
+/* /// ФИЛЬТР ///*/
 
 .filters-section {
   padding: 40px 20px;
@@ -207,11 +210,12 @@ nav a:hover {
 }
 
 .product-card {
-  background: white;
+  background: #fff;
   border-radius: 18px;
   padding: 12px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  transition: 0.35s;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  overflow: hidden;
 }
 
 .product-card:hover {
@@ -224,19 +228,7 @@ nav a:hover {
   object-fit: cover;
   border-radius: 14px;
 }
-
-@media (max-width: 768px) {
-  .products-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* Подписка на новости */
+/* /// Подписка на новости ///*/
 .subscribe {
   display: flex;
   justify-content: space-between;
@@ -275,8 +267,26 @@ input {
   font-size: 18px;
   font-family: "Playpen Sans", sans-serif;
 }
+.subscribe-success {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 100px;
+}
+.subscribe-success img {
+  width: 200px;
+}
+.subscribe-content.success .subscribe-text,
+.subscribe-content.success .subscribe-form {
+  display: none;
+}
 
-/* Приложения */
+.subscribe-content.success .subscribe-success {
+  display: flex;
+}
+/* /// Приложения для смартфона ///*/
 .app-section {
   padding: 60px 10%;
   text-align: center;
@@ -295,7 +305,9 @@ input {
 .social img,
 .app-btn img {
   transition: 0.3s;
-  cursor: pointer;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer;
 }
 
 .social img:hover,
@@ -304,7 +316,7 @@ input {
   filter: drop-shadow(0 6px 10px rgba(255, 150, 200, 0.4));
 }
 
-/* Отзывы */
+/* /// ОТЗЫВЫ ///*/
 .reviews {
   padding: 70px 10%;
   text-align: center;
@@ -353,6 +365,9 @@ input {
 .swiper-button-prev,
 .swiper-button-next {
   color: #8b008b !important;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer !important;
 }
 .swiper-pagination {
   position: relative !important;
@@ -362,6 +377,9 @@ input {
 .swiper-pagination-bullet {
   background: #8b008b !important;
   opacity: 0.4;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -381,7 +399,7 @@ input {
   transform: translateY(0);
 }
 
-/* Подвал */
+/* /// ПОДВАЛ ///*/
 .footer {
   padding: 40px 10%;
   background: #fff5f7;
@@ -391,7 +409,9 @@ input {
   width: 120px;
   margin: auto auto 20px;
   transition: transform 0.4s ease;
-  cursor: pointer;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer;
 }
 .footer-logo:hover {
   transform: scale(1.1);
@@ -407,7 +427,8 @@ input {
   height: 32px;
 }
 
-/* Адаптив */
+/* /// АДАПТИВ ///*/
+
 @media (max-width: 992px) {
   .hero {
     display: block;
@@ -428,6 +449,9 @@ input {
   }
   .collections h2 img {
     width: 80%;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -484,4 +508,13 @@ input {
   button {
     width: 100%;
   }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .review-content img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 }

@@ -9,10 +9,8 @@ heroBtn.addEventListener("click", () => {
   });
 });
 
-// ===== фильтр =====
-const filterBtns = document.querySelectorAll(".filter-btn");
-const productsGrid = document.querySelector(".products-grid");
-
+// ===== Фильтр =====
+// Данные
 const products = {
   bracelets: [
     "images/bracelets.jpeg",
@@ -20,21 +18,18 @@ const products = {
     "images/extra-items/extra-bracelet2.jpeg",
     "images/extra-items/extra-bracelet3.jpeg",
   ],
-
   rings: [
     "images/rings.jpeg",
     "images/extra-items/extra-rings1.jpeg",
     "images/extra-items/extra-rings2.jpeg",
     "images/extra-items/extra-rings3.jpeg",
   ],
-
   necklaces: [
     "images/necklaces.jpeg",
     "images/extra-items/extra-necklaces1.jpeg",
     "images/extra-items/extra-necklaces2.jpeg",
     "images/extra-items/extra-necklaces3.jpeg",
   ],
-
   earrings: [
     "images/earrings.jpeg",
     "images/extra-items/extra-earrings1.jpeg",
@@ -43,46 +38,78 @@ const products = {
   ],
 };
 
-// старт пусто
-productsGrid.innerHTML = "";
+// Элементы
+const grid = document.querySelector(".products-grid");
+const filterBtns = document.querySelectorAll(".filter-btn");
 
-function renderCards(arr) {
-  productsGrid.innerHTML = "";
+let activeFilter = null;
 
-  arr.forEach((src) => {
-    productsGrid.innerHTML += `
-      <div class="product-card">
-        <img src="${src}" alt="">
-      </div>
-    `;
+// ===== РЕНДЕР =====
+function render(arr) {
+  grid.innerHTML = "";
+
+  arr.forEach((img, i) => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(10px)";
+
+    card.innerHTML = `<img src="${img}" />`;
+
+    grid.appendChild(card);
+
+    // Плавное появление
+    setTimeout(() => {
+      card.style.transition = "0.3s ease";
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }, i * 40);
   });
 }
 
+// Показать всё
+function showAll() {
+  render(Object.values(products).flat());
+}
+
+// Скрыть
+function hideAll() {
+  grid.innerHTML = "";
+}
+
+// Логика
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const filter = btn.dataset.filter.toLowerCase();
 
+    // Повторный клик = закрыть
+    if (activeFilter === filter) {
+      activeFilter = null;
+      btn.classList.remove("active");
+      hideAll();
+      return;
+    }
+
+    // Active кнопка
     filterBtns.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
-    // ALL = показать все 16
+    activeFilter = filter;
+
+    // ALL
     if (filter === "all") {
-      renderCards([
-        ...products.bracelets,
-        ...products.rings,
-        ...products.necklaces,
-        ...products.earrings,
-      ]);
-    } else {
-      // одна категория = 4 карточки
-      renderCards(products[filter]);
+      showAll();
+      return;
     }
+
+    // Категории
+    render(products[filter]);
   });
 });
-
 // ===== Подписка =====
-
 const form = document.querySelector(".subscribe-form");
+const container = document.querySelector(".subscribe-content");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -93,24 +120,18 @@ form.addEventListener("submit", (e) => {
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneValid = phone.length >= 10;
 
-  if (!emailValid) {
-    alert("Введите корректный email");
+  if (!emailValid || !phoneValid) {
+    alert("Проверь данные");
     return;
   }
 
-  if (!phoneValid) {
-    alert("Введите корректный номер телефона");
-    return;
-  }
+  container.classList.add("success");
+  form.reset();
 
-  form.parentElement.innerHTML = `
-    <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:12px; padding-bottom:100px;">
-      <img src="images/success.png" alt="success" style="width:300px;" />
-      <h3>💖 Спасибо за подписку 💖</h3>
-    </div>
-  `;
+  setTimeout(() => {
+    container.classList.remove("success");
+  }, 5000);
 });
-
 // ===== Swiper =====
 new Swiper(".mySwiper", {
   loop: true,
