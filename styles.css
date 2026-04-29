@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("/images/cursor.png"), auto;
 }
 body {
   font-family: "Playpen Sans", sans-serif;
@@ -26,7 +27,7 @@ button {
   background-position: center;
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  cursor: url("images/pointer.png") 6 6, pointer;
   transition: transform 0.3s ease;
 }
 
@@ -46,7 +47,6 @@ button:hover {
 .logo {
   width: 120px;
   transition: transform 0.4s ease;
-  cursor: pointer;
 }
 .logo:hover {
   transform: scale(1.1);
@@ -109,7 +109,12 @@ nav a:hover {
 }
 .collections h2 img {
   width: 50%;
-  margin: auto;
+  margin: auto;}
+.collections img {
+ transition: transform 0.4s ease;
+}
+.collections img:hover {
+  transform: scale(1.1);
 }
 .grid {
   display: grid;
