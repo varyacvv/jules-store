@@ -9,10 +9,16 @@
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="header">
-      <img src="images/jules1.png" class="logo" alt="JULES" />
+      <a href="index.html"
+        ><img src="images/jules1.png" class="logo" alt="JULES"
+      /></a>
       <nav>
         <a href="#">О НАС</a>
         <a href="#">ДОСТАВКА</a>
@@ -24,7 +30,7 @@
       <div></div>
       <div class="hero-content">
         <img src="images/jules2.png" class="hero-logo" alt="JULES" />
-        <p>Эксклюзивные коллекции. Ограниченный тираж. Вечная ценность</p>
+        <p>Эксклюзивные коллекции. Ограниченный тираж. Вечная ценность.</p>
         <button>КУПИТЬ!</button>
       </div>
       <div class="hero-img"><img src="images/girl1.png" alt="Girl" /></div>
@@ -67,29 +73,101 @@
       </div>
     </section>
 
+    <section class="filters-section">
+      <h2>Выберите категорию:</h2>
+
+      <div class="filters">
+        <button class="filter-btn" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="Bracelets">BRACELETS</button>
+        <button class="filter-btn" data-filter="Rings">RINGS</button>
+        <button class="filter-btn" data-filter="Necklaces">NECKLACES</button>
+        <button class="filter-btn" data-filter="Earrings">EARRINGS</button>
+      </div>
+    </section>
+
     <section class="subscribe">
       <img src="images/jules-sale.png" class="side-img" />
-      <div>
-        <h2>Подпишись на новости!</h2>
-        <h3>Будь в курсе скидок ❤️</h3>
+      <div class="subscribe-content">
+        <div class="subscribe-text">
+          <h2>Подпишись на новости!</h2>
+          <h3>Будь в курсе скидок ❤️</h3>
+        </div>
         <form class="subscribe-form">
           <input type="email" placeholder="yourmail@gmail.com" />
-          <input type="tel" placeholder="+7___ ___ __ __">
+          <input type="tel" placeholder="+7___ ___ __ __" />
           <button>SUBSCRIBE</button>
         </form>
       </div>
       <img src="images/shopping-cart.png" class="side-img" />
     </section>
- <section class="app__section">
-        <h2>Скачай наше приложение</h2>
-        <div class="app__buttons">
-            <a href="#" class="app__btn"><img src="images/app-store.png" alt="App Store"></a>
-            <a href="#" class="app__btn"><img src="images/play-store.png" alt="Play Store"></a>
+
+    <section class="app-section">
+      <h2>Скачай наше приложение</h2>
+      <div class="app-buttons">
+        <a href="#" class="app-btn"
+          ><img src="images/app-store.png" alt="App Store"
+        /></a>
+        <a href="#" class="app-btn"
+          ><img src="images/play-store.png" alt="Play Store"
+        /></a>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>Отзывы клиентов:</h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- 1 -->
+          <div class="swiper-slide review-card">
+            <div class="review-content">
+              <h3>Анна</h3>
+              <img src="images/review1.jpg" alt="Покупатель" />
+              <p>
+                Потрясающие украшения! Очень качественное золото, ношу каждый
+                день — блеск не теряется.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="swiper-slide review-card">
+            <div class="review-content">
+              <h3>Мария</h3>
+              <img src="images/review2.jpg" alt="Покупатель" />
+              <p>
+                Заказала серьги — вживую они даже лучше, чем на фото. Спасибо за
+                качество и быструю доставку!
+              </p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="swiper-slide review-card">
+            <div class="review-content">
+              <h3>Екатерина</h3>
+              <img src="images/review3.jpg" alt="Покупатель" />
+              <p>
+                Очень красивый магазин, упаковка была как подарок из люксового
+                бренда 💖 Рекомендую!
+              </p>
+            </div>
+          </div>
         </div>
+
+        <!-- Пагинация -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Стрелки -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </section>
 
     <footer class="footer">
-      <img src="images/jules1.png" class="footer-logo" />
+      <a href="index.html"
+        ><img src="images/jules1.png" class="footer-logo"
+      /></a>
       <div class="social">
         <a href="https://vk.com" target="_blank"
           ><img src="images/vk-logo.png" alt="VK"
@@ -102,6 +180,8 @@
         /></a>
       </div>
       <p>© 2026 JULES Jewelry. All rights reserved.</p>
+      <p>г. Москва, ул. Ювелирная, д.1</p>
+      <p>ПН-ПТ с 08:00 до 20:00</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
