@@ -10,26 +10,73 @@ heroBtn.addEventListener("click", () => {
 });
 
 // ===== фильтр =====
-const cards = [...document.querySelectorAll(".item")];
 const filterBtns = document.querySelectorAll(".filter-btn");
+const productsGrid = document.querySelector(".products-grid");
+
+const products = {
+  bracelets: [
+    "images/bracelets.jpeg",
+    "images/extra-items/extra-bracelet1.jpeg",
+    "images/extra-items/extra-bracelet2.jpeg",
+    "images/extra-items/extra-bracelet3.jpeg",
+  ],
+
+  rings: [
+    "images/rings.jpeg",
+    "images/extra-items/extra-rings1.jpeg",
+    "images/extra-items/extra-rings2.jpeg",
+    "images/extra-items/extra-rings3.jpeg",
+  ],
+
+  necklaces: [
+    "images/necklaces.jpeg",
+    "images/extra-items/extra-necklaces1.jpeg",
+    "images/extra-items/extra-necklaces2.jpeg",
+    "images/extra-items/extra-necklaces3.jpeg",
+  ],
+
+  earrings: [
+    "images/earrings.jpeg",
+    "images/extra-items/extra-earrings1.jpeg",
+    "images/extra-items/extra-earrings2.jpeg",
+    "images/extra-items/extra-earrings3.jpeg",
+  ],
+};
+
+// старт пусто
+productsGrid.innerHTML = "";
+
+function renderCards(arr) {
+  productsGrid.innerHTML = "";
+
+  arr.forEach((src) => {
+    productsGrid.innerHTML += `
+      <div class="product-card">
+        <img src="${src}" alt="">
+      </div>
+    `;
+  });
+}
 
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const filter = btn.dataset.filter.toLowerCase();
 
-    // Активная кнопка
     filterBtns.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
-    cards.forEach((card) => {
-      const title = card.querySelector("h3").textContent.toLowerCase();
-
-      if (filter === "all" || title === filter) {
-        card.classList.remove("hide");
-      } else {
-        card.classList.add("hide");
-      }
-    });
+    // ALL = показать все 16
+    if (filter === "all") {
+      renderCards([
+        ...products.bracelets,
+        ...products.rings,
+        ...products.necklaces,
+        ...products.earrings,
+      ]);
+    } else {
+      // одна категория = 4 карточки
+      renderCards(products[filter]);
+    }
   });
 });
 
