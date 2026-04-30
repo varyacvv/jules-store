@@ -14,7 +14,9 @@ img {
   max-width: 100%;
   display: block;
 }
-button {
+.hero button,
+.subscribe-form button,
+.filter-btn {
   font-family: "Playpen Sans", sans-serif;
   font-size: 20px;
   font-weight: 800;
@@ -33,11 +35,57 @@ button {
   transition: transform 0.3s ease;
 }
 
-button:hover {
+.hero button:hover,
+.subscribe-form button:hover,
+.filter-btn:hover {
   transform: scale(1.05);
   color: #ff1180;
 }
+/* Кнопка наверх */
+.scroll-top-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 85px;
+  height: 85px;
 
+  border: none;
+  background: transparent; /* убрали фон */
+  box-shadow: none; /* убрали тень */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(20px);
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.scroll-top-btn img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.scroll-top-btn.show {
+  opacity: 3;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-6px) scale(1.08);
+}
 /* /// ШАПКА ///*/
 .header {
   display: flex;
@@ -297,6 +345,10 @@ input {
   justify-content: center;
   gap: 4px;
   margin-top: 20px;
+  background-image: url("images/app-section-bg.png");
+  background-size: content;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .app-btn {
   display: inline-block;
@@ -430,9 +482,22 @@ input {
 /* /// АДАПТИВ ///*/
 
 @media (max-width: 992px) {
+  .scroll-top-btn {
+    width: 52px;
+    height: 52px;
+    right: 14px;
+    bottom: 14px;
+  }
+  .scroll-top-btn img {
+    width: 60px;
+    height: 60px;
+  }
   .hero {
     display: block;
     padding: 30px 20px;
+  }
+  .hero p {
+    display: none;
   }
   .hero-img,
   .side-img {
@@ -456,6 +521,17 @@ input {
 }
 
 @media (max-width: 576px) {
+  .scroll-top-btn {
+    width: 52px;
+    height: 52px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .scroll-top-btn img {
+    width: 40px;
+    height: 40px;
+  }
   .hero {
     padding: 20px 15px;
   }
@@ -512,9 +588,9 @@ input {
     grid-template-columns: 1fr;
   }
   .review-content img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-}
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 }

@@ -165,6 +165,23 @@ const observer = new IntersectionObserver((entries, obs) => {
 });
 
 blocks.forEach((block) => observer.observe(block));
+// ===== Кнопка наверх =====
+const topBtn = document.querySelector(".scroll-top-btn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    topBtn.classList.add("show");
+  } else {
+    topBtn.classList.remove("show");
+  }
+});
+
+topBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 
 // ===== Console debugging =====
 const names = cards.map((card) => card.querySelector("h3").textContent);
