@@ -1,22 +1,26 @@
-/* /// Общие настройки ///*/
+/* ----- Общие настройки ----- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   cursor: url("/images/cursor.png"), auto;
 }
+
 body {
   font-family: "Playpen Sans", sans-serif;
   background: #fffafb;
   color: #5d3a5a;
 }
+
 img {
   max-width: 100%;
   display: block;
 }
-.hero button,
-.subscribe-form button,
-.filter-btn {
+
+/* ----- Кнопки (общий стиль) ----- */
+.hero__button,
+.subscribe__button,
+.filters__btn {
   font-family: "Playpen Sans", sans-serif;
   font-size: 20px;
   font-weight: 800;
@@ -35,12 +39,13 @@ img {
   transition: transform 0.3s ease;
 }
 
-.hero button:hover,
-.subscribe-form button:hover,
-.filter-btn:hover {
+.hero__button:hover,
+.subscribe__button:hover,
+.filters__btn:hover {
   transform: scale(1.05);
   color: #ff1180;
 }
+
 /* Кнопка наверх */
 .scroll-top-btn {
   position: fixed;
@@ -48,26 +53,19 @@ img {
   bottom: 25px;
   width: 85px;
   height: 85px;
-
   border: none;
   background: transparent;
-  box-shadow: none;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 0;
   cursor:
     url("images/pointer.png") 6 6,
     pointer;
-
   opacity: 0;
   visibility: hidden;
-
   transform: translateY(20px);
   transition: 0.3s ease;
-
   z-index: 9999;
 }
 
@@ -86,7 +84,8 @@ img {
 .scroll-top-btn:hover {
   transform: translateY(-6px) scale(1.08);
 }
-/* /// ШАПКА ///*/
+
+/* ----- Header ----- */
 .header {
   display: flex;
   justify-content: space-between;
@@ -94,18 +93,22 @@ img {
   padding: 20px 10%;
   background: #fff5f7;
 }
-.logo {
+
+.header__logo {
   width: 120px;
   transition: transform 0.4s ease;
 }
-.logo:hover {
+
+.header__logo:hover {
   transform: scale(1.1);
 }
-nav {
+
+.header__nav {
   display: flex;
   gap: 30px;
 }
-nav a {
+
+.header__nav-link {
   text-decoration: none;
   color: #8b008b;
   font-weight: 700;
@@ -114,10 +117,12 @@ nav a {
     url("images/pointer.png") 6 6,
     pointer;
 }
-nav a:hover {
+
+.header__nav-link:hover {
   color: #ff8fc4;
 }
-/* /// HERO блок ///*/
+
+/* ----- Hero ----- */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -125,23 +130,32 @@ nav a:hover {
   background: #fdf2d0;
   gap: 40px;
 }
-.hero-content {
+
+.hero__content {
   text-align: center;
   max-width: 900px;
   margin: auto;
 }
-.hero-logo {
+
+.hero__logo {
   width: 500px;
   margin: 40px auto 20px;
   transition: transform 0.4s ease;
 }
-.hero-logo:hover {
+
+.hero__logo:hover {
   transform: scale(1.1);
 }
-.hero-img {
+
+.hero__text {
+  margin-bottom: 20px;
+}
+
+.hero__image {
   width: 300px;
 }
-/* /// Преимущества ///*/
+
+/* ----- Преимущества ----- */
 .features {
   display: flex;
   justify-content: space-between;
@@ -149,108 +163,32 @@ nav a:hover {
   text-align: center;
   gap: 20px;
 }
-.features div {
+
+.features__item {
   flex: 1;
 }
-.features h3 {
+
+.features__title {
   margin-bottom: 10px;
   color: #8b008b;
 }
-/* /// Коллекции ///*/
 
-.collections h2 img {
+/* ----- Коллекции (сетка товаров) ----- */
+.collections {
+  text-align: center;
+}
+
+.collections__heading img {
   width: 50%;
   margin: auto;
   transition: transform 0.4s ease;
 }
-.collections h2 img:hover {
+
+.collections__heading img:hover {
   transform: scale(1.1);
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 30px;
-}
 
-.item {
-  background: white;
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-}
-
-.item:hover {
-  transform: translateY(-8px);
-}
-
-.item img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-.item h3 {
-  margin-top: 10px;
-  color: #8b008b;
-}
-
-/* доп фото */
-.extra-images {
-  display: none;
-}
-
-/* когда фильтр включен */
-.filter-mode .item h3,
-.filter-mode .main-img {
-  display: none;
-}
-
-.filter-mode .extra-images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.filter-mode .extra-images img {
-  width: 100%;
-  border-radius: 14px;
-  padding: 8px;
-  background: white;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-}
-
-.filter-mode .extra-images img:hover {
-  transform: scale(1.05);
-}
-/* /// ФИЛЬТР ///*/
-
-.filters-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.filter-btn {
-  width: 150px;
-  height: 70px;
-  font-size: 16px;
-}
-
-.hide {
-  display: none;
-}
-.products-grid {
+.js-products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 22px;
@@ -276,7 +214,35 @@ nav a:hover {
   object-fit: cover;
   border-radius: 14px;
 }
-/* /// Подписка на новости ///*/
+
+/* ----- Фильтры ----- */
+.filters {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.filters__title {
+  margin-bottom: 20px;
+}
+
+.filters__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filters__btn {
+  width: 150px;
+  height: 70px;
+  font-size: 16px;
+}
+
+.filters__btn--active {
+  filter: brightness(0.9);
+}
+
+/* ----- Подписка на новости ----- */
 .subscribe {
   display: flex;
   justify-content: space-between;
@@ -287,35 +253,39 @@ nav a:hover {
   overflow: hidden;
 }
 
-.subscribe-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.side-img {
+.subscribe__side-img {
   height: 300px;
   display: block;
   align-self: flex-end;
 }
-form {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 15px;
+
+.subscribe__content {
+  flex: 1;
 }
-input {
+
+.subscribe__text {
+  margin-bottom: 20px;
+}
+
+.subscribe__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.subscribe__input {
   height: 50px;
   padding: 0 24px;
   border-radius: 40px;
   border: none;
   width: 320px;
   max-width: 100%;
-  min-width: 320px;
   font-size: 18px;
   font-family: "Playpen Sans", sans-serif;
 }
-.subscribe-success {
+
+.subscribe__success {
   display: none;
   text-align: center;
   flex-direction: column;
@@ -323,94 +293,103 @@ input {
   gap: 10px;
   padding-bottom: 100px;
 }
-.subscribe-success img {
+
+.subscribe__success img {
   width: 200px;
 }
-.subscribe-content.success .subscribe-text,
-.subscribe-content.success .subscribe-form {
+
+.subscribe__content.success .subscribe__text,
+.subscribe__content.success .subscribe__form {
   display: none;
 }
 
-.subscribe-content.success .subscribe-success {
+.subscribe__content.success .subscribe__success {
   display: flex;
 }
-/* /// Приложения для смартфона ///*/
-.app-section {
+
+/* ----- Приложения ----- */
+.app {
   padding: 60px 10%;
   text-align: center;
   background: #fffafb;
 }
-.app-buttons {
+
+.app__title {
+  margin-bottom: 20px;
+}
+
+.app__buttons {
   display: flex;
   justify-content: center;
   gap: 4px;
   margin-top: 20px;
   background-image: url("images/app-section-bg.png");
-  background-size:400px;
+  background-size: 300px;
   background-position: center;
   background-repeat: no-repeat;
 }
-.app-btn {
+
+.app__link {
   display: inline-block;
-  width: 70px;
+  line-height: 0;
 }
-.social img,
-.app-btn img {
-  transition: 0.3s;
+.app__link img {
+  display: block;
   cursor:
     url("images/pointer.png") 6 6,
     pointer;
+  transition: 0.3s;
 }
-
-.social img:hover,
-.app-btn img:hover {
+.app__link img:hover {
   transform: translateY(-5px) scale(1.08);
   filter: drop-shadow(0 6px 10px rgba(255, 150, 200, 0.4));
 }
 
-/* /// ОТЗЫВЫ ///*/
+/* ----- Отзывы / Swiper ----- */
 .reviews {
   padding: 70px 10%;
   text-align: center;
   background: #fffafb;
 }
 
+.reviews__title {
+  margin-bottom: 40px;
+}
+
 .mySwiper {
   max-width: 900px;
-  margin: 40px auto 0;
+  margin: 0 auto;
   padding-bottom: 100px;
 }
 
-.review-card {
+.reviews__card {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.review-content {
+.reviews__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
 
-.review-content h3 {
-  margin: 0;
+.reviews__name {
   color: #8b008b;
   font-size: 24px;
 }
 
-.review-content img {
+.reviews__photo {
   width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 12px;
 }
 
-.review-content p {
+.reviews__text {
   max-width: 420px;
-  margin: 0;
   line-height: 1.5;
 }
 
@@ -421,6 +400,7 @@ input {
     url("images/pointer.png") 6 6,
     pointer !important;
 }
+
 .swiper-pagination {
   position: relative !important;
   margin-top: 20px;
@@ -436,10 +416,56 @@ input {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #8b008b !important;
 }
-/* Анимация */
 
+/* ----- Footer ----- */
+.footer {
+  padding: 40px 10%;
+  background: #fff5f7;
+  text-align: center;
+}
+
+.footer__logo {
+  width: 120px;
+  margin: 0 auto 20px;
+  transition: transform 0.4s ease;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer;
+}
+
+.footer__logo:hover {
+  transform: scale(1.1);
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.footer__social-link img {
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+  cursor:
+    url("images/pointer.png") 6 6,
+    pointer !important;
+}
+
+.footer__social-link:hover img {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 6px 10px rgba(255, 150, 200, 0.4));
+}
+
+.footer__copyright,
+.footer__address,
+.footer__hours {
+  margin: 5px 0;
+}
+
+/* ----- Анимация появления (fade) ----- */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -451,143 +477,89 @@ input {
   transform: translateY(0);
 }
 
-/* /// ПОДВАЛ ///*/
-.footer {
-  padding: 40px 10%;
-  background: #fff5f7;
-  text-align: center;
-}
-.footer-logo {
-  width: 120px;
-  margin: auto auto 20px;
-  transition: transform 0.4s ease;
-  cursor:
-    url("images/pointer.png") 6 6,
-    pointer;
-}
-.footer-logo:hover {
-  transform: scale(1.1);
-}
-.social {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 15px;
-}
-.social img {
-  width: 32px;
-  height: 32px;
-}
-
-/* /// АДАПТИВ ///*/
-
+/* ===== Адаптив ===== */
 @media (max-width: 992px) {
-  .scroll-top-btn {
-    width: 52px;
-    height: 52px;
-    right: 14px;
-    bottom: 14px;
+  .js-products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
-  .scroll-top-btn img {
-    width: 60px;
-    height: 60px;
+  .hero__image,
+  .subscribe__side-img {
+    display: none;
   }
   .hero {
     display: block;
     padding: 30px 20px;
   }
-  .hero p {
-    display: none;
-  }
-  .hero-img,
-  .side-img {
-    display: none;
-  }
   .features {
     flex-direction: column;
-  }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
   }
   .subscribe {
     display: block;
   }
-  .collections h2 img {
+  .collections__heading img {
     width: 80%;
   }
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero__text {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .scroll-top-btn {
-    width: 52px;
-    height: 52px;
-    right: 14px;
-    bottom: 14px;
-  }
-
-  .scroll-top-btn img {
-    width: 40px;
-    height: 40px;
+  .js-products-grid {
+    grid-template-columns: 1fr !important;
   }
   .hero {
     padding: 20px 15px;
   }
-  .hero-content p {
+  .hero__text {
     font-size: 14px;
     padding: 0 10px;
   }
   .footer {
     padding: 30px 15px;
   }
-  .social {
+  .footer__social {
     gap: 15px;
   }
-  .social img {
+  .footer__social-link img {
     width: 36px;
     height: 36px;
   }
-  input {
-    width: 320px;
+  .subscribe__input {
+    width: 90%;
     max-width: 100%;
     min-width: 0;
   }
-  button {
+  .hero__button,
+  .subscribe__button,
+  .filters__btn {
     width: 160px;
     height: 80px;
     font-size: 16px;
-    background-size: contain;
   }
-
   .header {
     flex-direction: column;
     gap: 15px;
   }
-  nav {
+  .header__nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
   }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-logo {
+  .hero__logo {
     width: 100%;
     max-width: 320px;
   }
-  .collections h2 img {
+  .collections__heading img {
     width: 100%;
   }
-  input,
-  button {
+  .subscribe__input,
+  .hero__button,
+  .subscribe__button,
+  .filters__btn {
     width: 100%;
   }
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-  .review-content img {
+  .reviews__photo {
     width: 200px;
     height: 300px;
     object-fit: cover;

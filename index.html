@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JULES</title>
+    <title>JULES | ДЖУЛС</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap"
@@ -17,204 +17,216 @@
   </head>
   <body>
     <header class="header">
-      <a href="index.html"
-        ><img src="images/jules1.png" class="logo" alt="JULES"
-      /></a>
-      <nav>
-        <a href="#">О НАС</a>
-        <a href="#">ДОСТАВКА</a>
-        <a href="#">КОНТАКТЫ</a>
+      <a href="index.html" class="header__logo-link">
+        <img src="images/jules1.png" class="header__logo" alt="JULES" />
+      </a>
+      <nav class="header__nav">
+        <a href="#" class="header__nav-link">О НАС</a>
+        <a href="#" class="header__nav-link">ДОСТАВКА</a>
+        <a href="#" class="header__nav-link">КОНТАКТЫ</a>
       </nav>
     </header>
-<main></main>
-    <section class="hero">
-      <div></div>
-      <div class="hero-content">
-        <img src="images/jules2.png" class="hero-logo" alt="JULES" />
-        <p>Эксклюзивные коллекции. Ограниченный тираж. Вечная ценность.</p>
-        <button type="button">КУПИТЬ!</button>
-      </div>
-      <div class="hero-img"><img src="images/girl1.png" alt="Girl" /></div>
-    </section>
 
-    <section class="features">
-      <div>
-        <h3>Качество</h3>
-        <p>Используем только золото 585 пробы и стерлинговое серебро</p>
-      </div>
-      <div>
-        <h3>Ручная работа</h3>
-        <p>Каждое изделие проходит через руки мастера с любовью</p>
-      </div>
-      <div>
-        <h3>Гарантия</h3>
-        <p>Украшения станут вашей семейной реликвией</p>
-      </div>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <img src="images/jules2.png" class="hero__logo" alt="JULES" />
+          <p class="hero__text">
+            Эксклюзивные коллекции. Ограниченный тираж. Вечная ценность.
+          </p>
+          <button type="button" class="hero__button">КУПИТЬ!</button>
+        </div>
+        <div class="hero__image">
+          <img src="images/girl1.png" alt="Girl" />
+        </div>
+      </section>
 
-    <section class="collections">
-      <h2>
-        <img src="images/latest-collection.png" alt="Latest collection" />
-      </h2>
-      <div class="products-grid">
-        <div class="item">
-          <img class="main-img" src="images/bracelets.jpeg" alt="Bracelets" />
-          <div class="extra-images">
-            <img src="images/extra-items/extra-bracelet1.jpeg" />
-            <img src="images/extra-items/extra-bracelet2.jpeg" />
-            <img src="images/extra-items/extra-bracelet3.jpeg" />
+      <section class="features">
+        <div class="features__item">
+          <h3 class="features__title">Качество</h3>
+          <p class="features__desc">
+            Используем только золото 585 пробы и стерлинговое серебро
+          </p>
+        </div>
+        <div class="features__item">
+          <h3 class="features__title">Ручная работа</h3>
+          <p class="features__desc">
+            Каждое изделие проходит через руки мастера с любовью
+          </p>
+        </div>
+        <div class="features__item">
+          <h3 class="features__title">Гарантия</h3>
+          <p class="features__desc">
+            Украшения станут вашей семейной реликвией
+          </p>
+        </div>
+      </section>
+
+      <section class="collections">
+        <h2 class="collections__heading">
+          <img src="images/latest-collection.png" alt="Latest collection" />
+        </h2>
+        <div class="collections__grid js-products-grid"></div>
+      </section>
+
+      <section class="filters">
+        <h2 class="filters__title">Выберите категорию:</h2>
+        <div class="filters__buttons">
+          <button type="button" class="filters__btn" data-filter="all">
+            ALL
+          </button>
+          <button type="button" class="filters__btn" data-filter="Bracelets">
+            BRACELETS
+          </button>
+          <button type="button" class="filters__btn" data-filter="Rings">
+            RINGS
+          </button>
+          <button type="button" class="filters__btn" data-filter="Necklaces">
+            NECKLACES
+          </button>
+          <button type="button" class="filters__btn" data-filter="Earrings">
+            EARRINGS
+          </button>
+        </div>
+      </section>
+
+      <section class="subscribe">
+        <img
+          src="images/jules-sale.png"
+          class="subscribe__side-img"
+          alt="sale"
+        />
+        <div class="subscribe__content">
+          <div class="subscribe__text">
+            <h2>Подпишись на новости!</h2>
+            <h3>Будь в курсе скидок ❤️</h3>
           </div>
-          <h3>Bracelets</h3>
-        </div>
-        <div class="item">
-          <img class="main-img" src="images/rings.jpeg" alt="Rings" />
-          <div class="extra-images">
-            <img src="images/extra-items/extra-rings1.jpeg" />
-            <img src="images/extra-items/extra-rings2.jpeg" />
-            <img src="images/extra-items/extra-rings3.jpeg" />
+          <form class="subscribe__form">
+            <input
+              type="email"
+              class="subscribe__input"
+              placeholder="yourmail@gmail.com"
+            />
+            <input
+              type="tel"
+              class="subscribe__input"
+              placeholder="+7___ ___ __ __"
+            />
+            <button type="submit" class="subscribe__button">SUBSCRIBE</button>
+          </form>
+          <div class="subscribe__success">
+            <img src="images/success.png" alt="success" />
+            <h3>💖 Спасибо за подписку 💖</h3>
           </div>
-
-          <h3>Rings</h3>
         </div>
-        <div class="item">
-          <img class="main-img" src="images/necklaces.jpeg" alt="Necklaces" />
-          <div class="extra-images">
-            <img src="images/extra-items/extra-necklaces1.jpeg" />
-            <img src="images/extra-items/extra-necklaces2.jpeg" />
-            <img src="images/extra-items/extra-necklaces3.jpeg" />
-          </div>
-          <h3>Necklaces</h3>
+        <img
+          src="images/shopping-cart.png"
+          class="subscribe__side-img"
+          alt="cart"
+        />
+      </section>
+
+      <section class="app">
+        <h2 class="app__title">Скачай наше приложение</h2>
+        <div class="app__buttons">
+          <a
+            href="https://www.apple.com/app-store/"
+            target="_blank"
+            class="app__link"
+            ><img src="images/app-store.png" alt="App Store"
+          /></a>
+          <a href="https://play.google.com/" target="_blank" class="app__link"
+            ><img src="images/play-store.png" alt="Play Store"
+          /></a>
         </div>
-        <div class="item">
-          <img class="main-img" src="images/earrings.jpeg" alt="Earrings" />
-          <div class="extra-images">
-            <img src="images/extra-items/extra-earrings1.jpeg" />
-            <img src="images/extra-items/extra-earrings2.jpeg" />
-            <img src="images/extra-items/extra-earrings3.jpeg" />
-          </div>
-          <h3>Earrings</h3>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="filters-section">
-      <h2>Выберите категорию:</h2>
-
-      <div class="filters">
-        <button type="button" class="filter-btn" data-filter="all">ALL</button>
-        <button type="button" class="filter-btn" data-filter="Bracelets">BRACELETS</button>
-        <button type="button" class="filter-btn" data-filter="Rings">RINGS</button>
-        <button type="button" class="filter-btn" data-filter="Necklaces">NECKLACES</button>
-        <button type="button" class="filter-btn" data-filter="Earrings">EARRINGS</button>
-      </div>
-    </section>
-    <section class="subscribe">
-      <img src="images/jules-sale.png" class="side-img" />
-      <div class="subscribe-content">
-        <div class="subscribe-text">
-          <h2>Подпишись на новости!</h2>
-          <h3>Будь в курсе скидок ❤️</h3>
-        </div>
-        <form class="subscribe-form">
-          <input type="email" placeholder="yourmail@gmail.com" />
-         <input type="tel" placeholder="+7___ ___ __ __" />
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-        <!-- SUCCESS -->
-        <div class="subscribe-success hidden">
-          <img src="images/success.png" />
-          <h3>💖 Спасибо за подписку 💖</h3>
-        </div>
-      </div>
-      <img src="images/shopping-cart.png" class="side-img" />
-    </section>
-
-    <section class="app-section">
-      <h2>Скачай наше приложение</h2>
-      <div class="app-buttons">
-        <a href="#" class="app-btn"
-          ><img src="images/app-store.png" alt="App Store"
-        /></a>
-        <a href="#" class="app-btn"
-          ><img src="images/play-store.png" alt="Play Store"
-        /></a>
-      </div>
-    </section>
-
-    <section class="reviews">
-      <h2>Отзывы клиентов:</h2>
-
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- 1 -->
-          <div class="swiper-slide review-card">
-            <div class="review-content">
-              <h3>Анна</h3>
-              <img src="images/review1.jpg" alt="Покупатель" />
-              <p>
-                Потрясающие украшения! Очень качественное золото, ношу каждый
-                день — блеск не теряется.
-              </p>
+      <section class="reviews">
+        <h2 class="reviews__title">Отзывы клиентов:</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide reviews__card">
+              <div class="reviews__content">
+                <h3 class="reviews__name">Анна</h3>
+                <img
+                  src="images/review1.jpg"
+                  alt="Покупатель"
+                  class="reviews__photo"
+                />
+                <p class="reviews__text">
+                  Потрясающие украшения! Очень качественное золото, ношу каждый
+                  день — блеск не теряется.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide reviews__card">
+              <div class="reviews__content">
+                <h3 class="reviews__name">Мария</h3>
+                <img
+                  src="images/review2.jpg"
+                  alt="Покупатель"
+                  class="reviews__photo"
+                />
+                <p class="reviews__text">
+                  Заказала серьги — вживую они даже лучше, чем на фото. Спасибо
+                  за качество и быструю доставку!
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide reviews__card">
+              <div class="reviews__content">
+                <h3 class="reviews__name">Екатерина</h3>
+                <img
+                  src="images/review3.jpg"
+                  alt="Покупатель"
+                  class="reviews__photo"
+                />
+                <p class="reviews__text">
+                  Очень красивый магазин, упаковка была как подарок из люксового
+                  бренда 💖 Рекомендую!
+                </p>
+              </div>
             </div>
           </div>
-
-          <!-- 2 -->
-          <div class="swiper-slide review-card">
-            <div class="review-content">
-              <h3>Мария</h3>
-              <img src="images/review2.jpg" alt="Покупатель" />
-              <p>
-                Заказала серьги — вживую они даже лучше, чем на фото. Спасибо за
-                качество и быструю доставку!
-              </p>
-            </div>
-          </div>
-
-          <!-- 3 -->
-          <div class="swiper-slide review-card">
-            <div class="review-content">
-              <h3>Екатерина</h3>
-              <img src="images/review3.jpg" alt="Покупатель" />
-              <p>
-                Очень красивый магазин, упаковка была как подарок из люксового
-                бренда 💖 Рекомендую!
-              </p>
-            </div>
-          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
+      </section>
+    </main>
 
-        <!-- Пагинация -->
-        <div class="swiper-pagination"></div>
-
-        <!-- Стрелки -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </section>
-</main>
     <footer class="footer">
-      <a href="index.html"
-        ><img src="images/jules1.png" class="footer-logo"
-      /></a>
-      <div class="social">
-        <a href="https://vk.com" target="_blank"
+      <a href="index.html" class="footer__logo-link">
+        <img src="images/jules1.png" class="footer__logo" alt="JULES" />
+      </a>
+      <div class="footer__social">
+        <a href="https://vk.com" target="_blank" class="footer__social-link"
           ><img src="images/vk-logo.png" alt="VK"
         /></a>
-        <a href="https://telegram.org" target="_blank"
+        <a
+          href="https://telegram.org"
+          target="_blank"
+          class="footer__social-link"
           ><img src="images/telegram-logo.png" alt="TG"
         /></a>
-        <a href="https://instagram.com" target="_blank">
-          <img src="images/instagram-logo.png" alt="INST"
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="footer__social-link"
+          ><img src="images/instagram-logo.png" alt="INST"
         /></a>
       </div>
-      <p>© 2026 JULES Jewelry. All rights reserved.</p>
-      <p>г. Москва, ул. Ювелирная, д.1</p>
-      <p>ПН-ПТ с 08:00 до 20:00</p>
+      <p class="footer__copyright">
+        © 2026 JULES Jewelry. All rights reserved.
+      </p>
+      <p class="footer__address">г. Москва, ул. Ювелирная, д.1</p>
+      <p class="footer__hours">ПН-ПТ с 08:00 до 20:00</p>
     </footer>
 
     <button class="scroll-top-btn">
       <img src="images/scroll-top.png" alt="Наверх" />
     </button>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
