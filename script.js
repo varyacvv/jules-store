@@ -1,188 +1,193 @@
 // ===== Hero scroll =====
-const heroBtn = document.querySelector(".hero button");
-const collections = document.querySelector(".collections");
+document.addEventListener("DOMContentLoaded", () => {
+  const heroBtn = document.querySelector(".hero button");
+  const collections = document.querySelector(".collections");
 
-heroBtn.addEventListener("click", () => {
-  collections.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-});
-
-// ===== Фильтр =====
-// Данные
-const products = {
-  bracelets: [
-    "images/bracelets.jpeg",
-    "images/extra-items/extra-bracelet1.jpeg",
-    "images/extra-items/extra-bracelet2.jpeg",
-    "images/extra-items/extra-bracelet3.jpeg",
-  ],
-  rings: [
-    "images/rings.jpeg",
-    "images/extra-items/extra-rings1.jpeg",
-    "images/extra-items/extra-rings2.jpeg",
-    "images/extra-items/extra-rings3.jpeg",
-  ],
-  necklaces: [
-    "images/necklaces.jpeg",
-    "images/extra-items/extra-necklaces1.jpeg",
-    "images/extra-items/extra-necklaces2.jpeg",
-    "images/extra-items/extra-necklaces3.jpeg",
-  ],
-  earrings: [
-    "images/earrings.jpeg",
-    "images/extra-items/extra-earrings1.jpeg",
-    "images/extra-items/extra-earrings2.jpeg",
-    "images/extra-items/extra-earrings3.jpeg",
-  ],
-};
-
-// Элементы
-const grid = document.querySelector(".products-grid");
-const filterBtns = document.querySelectorAll(".filter-btn");
-
-let activeFilter = null;
-
-// ===== РЕНДЕР =====
-function render(arr) {
-  grid.innerHTML = "";
-
-  arr.forEach((img, i) => {
-    const card = document.createElement("div");
-    card.classList.add("product-card");
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(10px)";
-
-    card.innerHTML = `<img src="${img}" />`;
-
-    grid.appendChild(card);
-
-    // Плавное появление
-    setTimeout(() => {
-      card.style.transition = "0.3s ease";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, i * 40);
-  });
-}
-
-// Показать всё
-function showAll() {
-  render(Object.values(products).flat());
-}
-
-// Скрыть
-function hideAll() {
-  grid.innerHTML = "";
-}
-
-// Логика
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const filter = btn.dataset.filter.toLowerCase();
-
-    // Повторный клик = закрыть
-    if (activeFilter === filter) {
-      activeFilter = null;
-      btn.classList.remove("active");
-      hideAll();
-      return;
-    }
-
-    // Active кнопка
-    filterBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    activeFilter = filter;
-
-    // ALL
-    if (filter === "all") {
-      showAll();
-      return;
-    }
-
-    // Категории
-    render(products[filter]);
-  });
-});
-// ===== Подписка =====
-const form = document.querySelector(".subscribe-form");
-const container = document.querySelector(".subscribe-content");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const email = form.querySelector('input[type="email"]').value.trim();
-  const phone = form.querySelector('input[type="tel"]').value.trim();
-
-  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const phoneValid = phone.length >= 10;
-
-  if (!emailValid || !phoneValid) {
-    alert("Проверь данные");
-    return;
+  if (heroBtn && collections) {
+    heroBtn.addEventListener("click", () => {
+      collections.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
   }
 
-  container.classList.add("success");
-  form.reset();
+  // ===== Фильтр =====
+  const products = {
+    bracelets: [
+      "images/bracelets.jpeg",
+      "images/extra-items/extra-bracelet1.jpeg",
+      "images/extra-items/extra-bracelet2.jpeg",
+      "images/extra-items/extra-bracelet3.jpeg",
+    ],
+    rings: [
+      "images/rings.jpeg",
+      "images/extra-items/extra-rings1.jpeg",
+      "images/extra-items/extra-rings2.jpeg",
+      "images/extra-items/extra-rings3.jpeg",
+    ],
+    necklaces: [
+      "images/necklaces.jpeg",
+      "images/extra-items/extra-necklaces1.jpeg",
+      "images/extra-items/extra-necklaces2.jpeg",
+      "images/extra-items/extra-necklaces3.jpeg",
+    ],
+    earrings: [
+      "images/earrings.jpeg",
+      "images/extra-items/extra-earrings1.jpeg",
+      "images/extra-items/extra-earrings2.jpeg",
+      "images/extra-items/extra-earrings3.jpeg",
+    ],
+  };
 
-  setTimeout(() => {
-    container.classList.remove("success");
-  }, 5000);
-});
-// ===== Swiper =====
-new Swiper(".mySwiper", {
-  loop: true,
-  autoplay: {
-    delay: 4000,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+  const grid = document.querySelector(".products-grid");
+  const filterBtns = document.querySelectorAll(".filter-btn");
 
-// ===== Aнимация при скролле =====
-const blocks = document.querySelectorAll(
-  ".features, .collections, .filters-section, .subscribe, .reviews, .footer",
-);
+  let activeFilter = null;
 
-blocks.forEach((block) => block.classList.add("fade"));
+  if (!grid) return;
 
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      obs.unobserve(entry.target);
-    }
+  // ===== РЕНДЕР =====
+  function render(arr) {
+    grid.innerHTML = "";
+
+    arr.forEach((img, i) => {
+      const card = document.createElement("div");
+      card.classList.add("product-card");
+
+      card.innerHTML = `<img src="${img}" alt="product" />`;
+
+      card.style.opacity = "0";
+      card.style.transform = "translateY(10px)";
+
+      grid.appendChild(card);
+
+      setTimeout(() => {
+        card.style.transition = "0.3s ease";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }, i * 50);
+    });
+  }
+
+  function showAll() {
+    render(Object.values(products).flat());
+  }
+
+  function hideAll() {
+    grid.innerHTML = "";
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter.toLowerCase();
+
+      // повторный клик = закрыть фильтр
+      if (activeFilter === filter) {
+        activeFilter = null;
+        btn.classList.remove("active");
+        hideAll();
+        return;
+      }
+
+      // активная кнопка
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      activeFilter = filter;
+
+      // показать все
+      if (filter === "all") {
+        showAll();
+        return;
+      }
+
+      // показать категорию
+      render(products[filter] || []);
+    });
   });
-});
 
-blocks.forEach((block) => observer.observe(block));
-// ===== Кнопка наверх =====
-const topBtn = document.querySelector(".scroll-top-btn");
+  // ===== Форма подписки =====
+  const form = document.querySelector(".subscribe-form");
+  const container = document.querySelector(".subscribe-content");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    topBtn.classList.add("show");
-  } else {
-    topBtn.classList.remove("show");
+  if (form && container) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const phone = form.querySelector('input[type="tel"]').value.trim();
+
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const phoneValid = phone.length >= 10;
+
+      if (!emailValid || !phoneValid) {
+        console.log("Validation error");
+        return;
+      }
+
+      container.classList.add("success");
+      form.reset();
+
+      setTimeout(() => {
+        container.classList.remove("success");
+      }, 5000);
+    });
+  }
+
+  // ===== Swiper =====
+  if (document.querySelector(".mySwiper")) {
+    new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+
+  // ===== Анимация при скролле =====
+  const blocks = document.querySelectorAll(
+    ".features, .collections, .filters-section, .subscribe, .reviews, .footer",
+  );
+
+  blocks.forEach((block) => block.classList.add("fade"));
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        obs.unobserve(entry.target);
+      }
+    });
+  });
+
+  blocks.forEach((block) => observer.observe(block));
+
+  // ===== Кнопка наверх =====
+  const topBtn = document.querySelector(".scroll-top-btn");
+
+  if (topBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
+      }
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
   }
 });
-
-topBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
-
-// ===== Console debugging =====
-const names = cards.map((card) => card.querySelector("h3").textContent);
-console.log("Категории товаров:", names);

@@ -50,8 +50,8 @@ img {
   height: 85px;
 
   border: none;
-  background: transparent; /* убрали фон */
-  box-shadow: none; /* убрали тень */
+  background: transparent;
+  box-shadow: none;
 
   display: flex;
   justify-content: center;
@@ -78,7 +78,7 @@ img {
 }
 
 .scroll-top-btn.show {
-  opacity: 3;
+  opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
@@ -346,7 +346,7 @@ input {
   gap: 4px;
   margin-top: 20px;
   background-image: url("images/app-section-bg.png");
-  background-size: content;
+  background-size:400px;
   background-position: center;
   background-repeat: no-repeat;
 }
