@@ -1,40 +1,47 @@
-# JULES Jewelry
+# 💎 JULES Jewelry
 
-Ссылка для просмотра: https://varyacvv.github.io/jules-store/
+## RU
 
-## Описание
+### О проекте
 
-**JULES Jewelry** — это одностраничный сайт для ювелирного бренда. Проект разработан с использованием HTML, CSS и JavaScript. Реализована фильтрация товаров по категориям, адаптивная вёрстка, форма подписки с валидацией, слайдер отзывов и плавные анимации.
+**JULES Jewelry** — одностраничный сайт для ювелирного бренда.
 
-## Возможности
+Проект разработан с использованием **HTML, CSS и JavaScript**. Реализованы динамический каталог товаров, фильтрация по категориям, адаптивная вёрстка, форма подписки с валидацией, слайдер отзывов и интерактивные анимации.
 
-- Анимированный лендинг с плавными появлениями блоков при скролле
-- Динамический каталог товаров (рендер через JavaScript)
-- Фильтрация товаров по категориям: ALL, Bracelets, Rings, Necklaces, Earrings
-- Плавные анимации карточек товаров
-- Форма подписки с валидацией email и телефона
-- Экран «Спасибо за подписку» с автоматическим возвратом формы
-- Кнопка «Наверх» с плавным скроллом
-- Слайдер отзывов (Swiper.js) с автопрокруткой
-- Кастомные курсоры для кликабельных элементов
-- Адаптивная вёрстка под мобильные устройства
+### ✨ Возможности
 
-## Технологии
+* Динамический каталог товаров с рендерингом через JavaScript
+* Фильтрация товаров по категориям: ALL, BRACELETS, RINGS, NECKLACES, EARRINGS
+* Плавная прокрутка между разделами страницы
+* Анимация появления блоков при скролле
+* Плавные анимации карточек товаров
+* Форма подписки с валидацией email и телефона
+* Экран подтверждения после успешной отправки формы
+* Слайдер отзывов с автоматической прокруткой
+* Кнопка «Наверх» с плавным скроллом
+* Кастомные курсоры для интерактивных элементов
+* Адаптивная вёрстка для различных размеров экранов
 
-- HTML5
-- CSS3 (Flexbox, Grid, BEM-именование)
-- JavaScript (ES6)
-- Swiper.js (библиотека для слайдера)
-- Google Fonts
+### 🛠 Технологии
 
-## Структура проекта
-```
+* HTML5
+* CSS3
+* Flexbox
+* CSS Grid
+* BEM
+* JavaScript (ES6)
+* Swiper.js
+* Intersection Observer API
+* Google Fonts
+* Git / GitHub
+
+### 📂 Структура проекта
+
+```text
 jules-store/
-│
 ├── index.html
 ├── styles.css
 ├── script.js
-│
 ├── images/
 │   ├── bracelets.jpeg
 │   ├── rings.jpeg
@@ -42,37 +49,137 @@ jules-store/
 │   ├── earrings.jpeg
 │   ├── extra-items/
 │   └── other images...
-│
 └── README.md
 ```
 
+### Сборка и запуск проекта
+
+Проект не требует установки дополнительных зависимостей или запуска локального сервера.
+
+Для запуска:
+
+1. Скачайте файлы проекта.
+2. Убедитесь, что папка `images` находится рядом с `index.html`.
+3. Откройте `index.html` в современном браузере.
+
+Также проект доступен онлайн:
+
+https://varyacvv.github.io/jules-store/
+
+### Что я практиковала
+
+В рамках проекта я работала над:
+
+* семантической HTML-разметкой
+* адаптивной вёрсткой с использованием Flexbox и CSS Grid
+* организацией CSS-классов по методологии BEM
+* динамическим созданием элементов через JavaScript
+* фильтрацией данных и изменением содержимого страницы
+* обработкой пользовательских событий
+* валидацией формы
+* работой с регулярными выражениями
+* использованием Intersection Observer API
+* интеграцией библиотеки Swiper.js
+* созданием CSS-анимаций
+* работой с Git и GitHub
+
 ---
-
-## Функциональность
-
-- **Плавная прокрутка** при клике на кнопку «КУПИТЬ!» к разделу с коллекциями.
-- **Фильтрация товаров** (ALL, BRACELETS, RINGS, NECKLACES, EARRINGS).  
-  - При первом нажатии показываются только картинки (без заголовков).  
-  - Повторное нажатие на активную категорию возвращает главные 4 картинки с названиями.
-- **Форма подписки** с валидацией email (проверка через регулярное выражение) и телефона (минимальная длина 10 символов). После успешной отправки появляется сообщение на 5 секунд.
-- **Слайдер отзывов** Swiper с навигацией, пагинацией и автопрокруткой (смена каждые 4 секунды).
-- **Анимация появления блоков** при скролле (Intersection Observer) – элементы плавно выезжают снизу.
-- **Кнопка «Наверх»**, которая появляется после прокрутки от 400px и плавно возвращает в начало страницы.
-- **Кастомные курсоры** для всех кликабельных элементов.
-- **Адаптивность** под три размера экрана:
-  - Десктоп (≥ 992px) → 4 колонки товаров.
-  - Планшет (768px – 991px) → 2 колонки товаров, скрываются некоторые декоративные элементы.
-  - Мобильные устройства (≤ 576px) → 1 колонка товаров, шапка становится вертикальной, все кнопки растягиваются на всю ширину.
-
-## Как запустить
-
-1. Скачайте все файлы проекта в одну папку.
-2. Убедитесь, что папка с изображениями называется `images` и лежит рядом с `index.html`.
-3. Откройте файл `index.html` в любом современном браузере (Chrome, Firefox, Safari, Edge). Можно открывать локально — все стили и скрипты работают без сервера.
 
 ## Автор
 
-Проект был выполнен Клинкиной В.С. (@varyacvv)
-Все изображения и содержание условные, используются только в учебных целях.
+Проект был выполнен @varyacvv. Все изображения и содержание условные, используются только в учебных целях.
+* GitHub: [@varyacvv](https://github.com/varyacvv)
+* Telegram: [@varyacvv](https://t.me/varyacvv)
 
+---
 
+## ENG
+
+### About the Project
+
+**JULES Jewelry** is a single-page website for a jewelry brand.
+
+The project was built using **HTML, CSS and JavaScript**. It features a dynamic product catalog, category filtering, responsive layout, subscription form validation, a testimonials slider and interactive animations.
+
+### ✨ Features
+
+* Dynamic product catalog rendered with JavaScript
+* Product filtering by categories: ALL, BRACELETS, RINGS, NECKLACES, EARRINGS
+* Smooth scrolling between page sections
+* Scroll-based reveal animations
+* Smooth product card animations
+* Subscription form with email and phone validation
+* Confirmation screen after successful form submission
+* Testimonials slider with autoplay
+* Back-to-top button with smooth scrolling
+* Custom cursors for interactive elements
+* Responsive layout for different screen sizes
+
+### 🛠 Tech Stack
+
+* HTML5
+* CSS3
+* Flexbox
+* CSS Grid
+* BEM
+* JavaScript (ES6)
+* Swiper.js
+* Intersection Observer API
+* Google Fonts
+* Git / GitHub
+
+### 📂 Project Structure
+
+```text
+jules-store/
+├── index.html
+├── styles.css
+├── script.js
+├── images/
+│   ├── bracelets.jpeg
+│   ├── rings.jpeg
+│   ├── necklaces.jpeg
+│   ├── earrings.jpeg
+│   ├── extra-items/
+│   └── other images...
+└── README.md
+```
+
+### Getting Started
+
+The project does not require any additional dependencies or a local development server.
+
+To run the project:
+
+1. Download the project files.
+2. Make sure the `images` folder is located next to `index.html`.
+3. Open `index.html` in a modern browser.
+
+The project is also available online:
+
+https://varyacvv.github.io/jules-store/
+
+### What I Practiced
+
+This project helped me practice:
+
+* semantic HTML structure
+* responsive layouts using Flexbox and CSS Grid
+* CSS class organization with BEM
+* dynamic DOM manipulation with JavaScript
+* data filtering and dynamic content rendering
+* event handling
+* form validation
+* regular expressions
+* Intersection Observer API
+* Swiper.js integration
+* CSS animations
+* Git and GitHub workflow
+
+---
+
+## Author
+
+The project was created by @varyacvv. All images and content are illustrative and used for educational purposes only.
+* GitHub: [@varyacvv](https://github.com/varyacvv)
+* Telegram: [@varyacvv](https://t.me/varyacvv)
